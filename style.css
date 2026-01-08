@@ -1,0 +1,123 @@
+:root{
+  --bg:#0b1020;
+  --card:#111a33;
+  --text:#e9ecf5;
+  --muted:#aeb7d6;
+  --line:rgba(255,255,255,.10);
+  --accent:#7aa2ff;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:18px;
+}
+
+/* ユーザーがライトモード希望なら自動で切り替え */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#141827;
+    --muted:#5c647a;
+    --line:rgba(20,24,39,.10);
+    --accent:#2f6bff;
+    --shadow:0 10px 30px rgba(20,24,39,.12);
+  }
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  line-height:1.7;
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.25), transparent 55%),
+              radial-gradient(900px 500px at 80% 10%, rgba(255,122,198,.18), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+.container{
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 18px 56px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding: 18px 18px;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.brand .title{
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing:.2px;
+}
+.brand .subtitle{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.nav a{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+}
+
+.main{
+  margin-top: 18px;
+  padding: 22px 18px;
+  border:1px solid var(--line);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+h1{
+  margin: 0 0 10px;
+  font-size: 26px;
+  letter-spacing:.2px;
+}
+h2{
+  margin: 22px 0 8px;
+  font-size: 18px;
+}
+p, li{
+  color: var(--text);
+}
+.muted{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+hr{
+  border:0;
+  border-top:1px solid var(--line);
+  margin: 20px 0;
+}
+
+.footer{
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align:center;
+}
